@@ -1,0 +1,310 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>senai.spmedicalgroup.webApi</name>
+    </assembly>
+    <members>
+        <member name="M:senai.spmedicalgroup.webApi.Controllers.ConsultasController.LerTudo">
+            <summary>
+            Lê todos os objetos cadastrados
+            </summary>
+            <returns>Lista de todos os objetos</returns>
+        </member>
+        <member name="M:senai.spmedicalgroup.webApi.Controllers.ConsultasController.LerMed(System.String)">
+            <summary>
+            Lê todas as consultas cadastradas para esse médico
+            </summary>
+            <returns>Lista de todos os objetos</returns>
+        </member>
+        <member name="M:senai.spmedicalgroup.webApi.Controllers.ConsultasController.LerPac(System.String)">
+            <summary>
+            Lê todas as consultas cadastradas para esse médico
+            </summary>
+            <returns>Lista de todos os objetos</returns>
+        </member>
+        <member name="M:senai.spmedicalgroup.webApi.Controllers.ConsultasController.BuscarPorId(System.Int32)">
+            <summary>
+            Busca objeto atráves do ID
+            </summary>
+            <returns>Lista apenas o objeto selecionado</returns>
+        </member>
+        <member name="M:senai.spmedicalgroup.webApi.Controllers.ConsultasController.Cadastrar(senai.spmedicalgroup.webApi.Domains.Consultum)">
+            <summary>
+            Cadastra um objeto
+            </summary>
+            <returns>Cadastra o objeto solicitado</returns>
+        </member>
+        <member name="M:senai.spmedicalgroup.webApi.Controllers.ConsultasController.AtualizarDescricao(senai.spmedicalgroup.webApi.Domains.Consultum)">
+            <summary>
+            Atualiza a descrição da descrição
+            </summary>
+            <param name="obj">Objeto consulta com respectivo id</param>
+            <returns></returns>
+        </member>
+        <member name="M:senai.spmedicalgroup.webApi.Controllers.ConsultasController.Deletar(System.Int32)">
+            <summary>
+            Deleta um objeto
+            </summary>
+            <returns>Deleta o objeto solicitado</returns>
+        </member>
+        <member name="M:senai.spmedicalgroup.webApi.Controllers.LoginController.Login(senai.spmedicalgroup.webApi.ViewModels.LoginViewModel)">
+            <summary>
+            Lê todos os objetos cadastrados
+            </summary>
+            <returns>Lista de todos os objetos</returns>
+            <summary>
+            Busca objeto atráves do ID
+            </summary>
+            <returns>Lista apenas o objeto selecionado</returns>
+        </member>
+        <member name="M:senai.spmedicalgroup.webApi.Controllers.MedicosController.LerTudo">
+            <summary>
+            Lê todos os objetos cadastrados
+            </summary>
+            <returns>Lista de todos os objetos</returns>
+        </member>
+        <member name="M:senai.spmedicalgroup.webApi.Controllers.MedicosController.BuscarPorId(System.Int32)">
+            <summary>
+            Busca objeto atráves do ID
+            </summary>
+            <returns>Lista apenas o objeto selecionado</returns>
+        </member>
+        <member name="M:senai.spmedicalgroup.webApi.Controllers.MedicosController.Cadastrar(senai.spmedicalgroup.webApi.Domains.Medico)">
+            <summary>
+            Cadastra um objeto
+            </summary>
+            <returns>Cadastra o objeto solicitado</returns>
+        </member>
+        <member name="M:senai.spmedicalgroup.webApi.Controllers.MedicosController.Atualizar(System.Int32,senai.spmedicalgroup.webApi.Domains.Medico)">
+            <summary>
+            Atualiza um objeto
+            </summary>
+            <returns>Atualiza o objeto solicitado</returns>
+        </member>
+        <member name="M:senai.spmedicalgroup.webApi.Controllers.MedicosController.Deletar(System.Int32)">
+            <summary>
+            Deleta um objeto
+            </summary>
+            <returns>Deleta o objeto solicitado</returns>
+        </member>
+        <member name="M:senai.spmedicalgroup.webApi.Controllers.UsuariosController.BuscarPorEmail(System.String)">
+            <summary>
+            Busca objeto atráves do ID
+            </summary>
+            <returns>Lista apenas o objeto selecionado</returns>
+        </member>
+        <member name="M:senai.spmedicalgroup.webApi.Controllers.UsuariosController.Cadastrar(senai.spmedicalgroup.webApi.Domains.Usuario)">
+            <summary>
+            Cadastra um objeto
+            </summary>
+            <returns>Cadastra o objeto solicitado</returns>
+        </member>
+        <member name="M:senai.spmedicalgroup.webApi.Controllers.UsuariosController.Atualizar(senai.spmedicalgroup.webApi.Domains.Usuario)">
+            <summary>
+            Atualiza um objeto
+            </summary>
+            <returns>Atualiza o objeto solicitado</returns>
+        </member>
+        <member name="M:senai.spmedicalgroup.webApi.Controllers.UsuariosController.Deletar(System.String)">
+            <summary>
+            Deleta um objeto
+            </summary>
+            <returns>Deleta o objeto solicitado</returns>
+        </member>
+        <member name="M:senai.spmedicalgroup.webApi.Interfaces.IClinicaRepository.ListarTodos">
+            <summary>
+            Retorna todos os objetos cadastrados
+            </summary>
+            <returns>Uma lista de objetos</returns>
+        </member>
+        <member name="M:senai.spmedicalgroup.webApi.Interfaces.IClinicaRepository.BuscarPorId(System.Int32)">
+            <summary>
+            Retorna o objeto com respectivo id
+            </summary>
+            <param name="id">Id do objeto</param>
+            <returns>O objeto com respectivo id</returns>
+        </member>
+        <member name="M:senai.spmedicalgroup.webApi.Interfaces.IClinicaRepository.Deletar(System.Int32)">
+            <summary>
+            Deleta o objeto com respectivo id
+            </summary>
+            <param name="id">Id do objeto</param>
+        </member>
+        <member name="M:senai.spmedicalgroup.webApi.Interfaces.IClinicaRepository.Atualizar(System.Int32,senai.spmedicalgroup.webApi.Domains.Clinica)">
+            <summary>
+            Atualiza o objeto com respectivo id
+            </summary>
+            <param name="id">Id</param>
+            <param name="objAtualizado">Objeto atualizado</param>
+        </member>
+        <member name="M:senai.spmedicalgroup.webApi.Interfaces.IClinicaRepository.Cadastrar(senai.spmedicalgroup.webApi.Domains.Clinica)">
+            <summary>
+            Cadastra um novo objeto
+            </summary>
+            <param name="objAtualizado">Novo objeto</param>
+        </member>
+        <member name="M:senai.spmedicalgroup.webApi.Interfaces.IConsultumRepository.ListarTodos">
+            <summary>
+            Retorna todos os objetos cadastrados
+            </summary>
+            <returns>Uma lista de objetos</returns>
+        </member>
+        <member name="M:senai.spmedicalgroup.webApi.Interfaces.IConsultumRepository.ListarPorMed(System.Int32)">
+            <summary>
+            Retorna todos as cadastradas cadastrados com o id do médico
+            </summary>
+            <param name="id">Id médico</param>
+            <returns>Lista de consultas</returns>
+        </member>
+        <member name="M:senai.spmedicalgroup.webApi.Interfaces.IConsultumRepository.ListarPorPac(System.Int32)">
+            <summary>
+            Retorna todos as cadastradas cadastrados com o id do paciente
+            </summary>
+            <param name="id">Id paciente</param>
+            <returns>Lista de consultas</returns>
+        </member>
+        <member name="M:senai.spmedicalgroup.webApi.Interfaces.IConsultumRepository.BuscarPorId(System.Int32)">
+            <summary>
+            Retorna o objeto com respectivo id
+            </summary>
+            <param name="id">Id do objeto</param>
+            <returns>O objeto com respectivo id</returns>
+        </member>
+        <member name="M:senai.spmedicalgroup.webApi.Interfaces.IConsultumRepository.Deletar(System.Int32)">
+            <summary>
+            Deleta o objeto com respectivo id
+            </summary>
+            <param name="id">Id do objeto</param>
+        </member>
+        <member name="M:senai.spmedicalgroup.webApi.Interfaces.IConsultumRepository.Atualizar(System.Int32,senai.spmedicalgroup.webApi.Domains.Consultum)">
+            <summary>
+            Atualiza o objeto com respectivo id
+            </summary>
+            <param name="id">Id</param>
+            <param name="objAtualizado">Objeto atualizado</param>
+        </member>
+        <member name="M:senai.spmedicalgroup.webApi.Interfaces.IConsultumRepository.Cadastrar(senai.spmedicalgroup.webApi.Domains.Consultum)">
+            <summary>
+            Cadastra um novo objeto
+            </summary>
+            <param name="objAtualizado">Novo objeto</param>
+        </member>
+        <member name="M:senai.spmedicalgroup.webApi.Interfaces.IMedicoRepository.ListarTodos">
+            <summary>
+            Retorna todos os objetos cadastrados
+            </summary>
+            <returns>Uma lista de objetos</returns>
+        </member>
+        <member name="M:senai.spmedicalgroup.webApi.Interfaces.IMedicoRepository.BuscarPorId(System.Int32)">
+            <summary>
+            Retorna o objeto com respectivo id
+            </summary>
+            <param name="id">Id do objeto</param>
+            <returns>O objeto com respectivo id</returns>
+        </member>
+        <member name="M:senai.spmedicalgroup.webApi.Interfaces.IMedicoRepository.BuscarPorEmail(System.String)">
+            <summary>
+            Retorna o objeto com respectivo email
+            </summary>
+            <param name="email">Email do objeto</param>
+            <returns>O objeto com respectivo email</returns>
+        </member>
+        <member name="M:senai.spmedicalgroup.webApi.Interfaces.IMedicoRepository.Deletar(System.Int32)">
+            <summary>
+            Deleta o objeto com respectivo id
+            </summary>
+            <param name="id">Id do objeto</param>
+        </member>
+        <member name="M:senai.spmedicalgroup.webApi.Interfaces.IMedicoRepository.Atualizar(System.Int32,senai.spmedicalgroup.webApi.Domains.Medico)">
+            <summary>
+            Atualiza o objeto com respectivo id
+            </summary>
+            <param name="id">Id</param>
+            <param name="objAtualizado">Objeto atualizado</param>
+        </member>
+        <member name="M:senai.spmedicalgroup.webApi.Interfaces.IMedicoRepository.Cadastrar(senai.spmedicalgroup.webApi.Domains.Medico)">
+            <summary>
+            Cadastra um novo objeto
+            </summary>
+            <param name="objAtualizado">Novo objeto</param>
+        </member>
+        <member name="M:senai.spmedicalgroup.webApi.Interfaces.IPacienteRepository.ListarTodos">
+            <summary>
+            Retorna todos os objetos cadastrados
+            </summary>
+            <returns>Uma lista de objetos</returns>
+        </member>
+        <member name="M:senai.spmedicalgroup.webApi.Interfaces.IPacienteRepository.BuscarPorEmail(System.String)">
+            <summary>
+            Retorna o objeto com respectivo email
+            </summary>
+            <param name="email">Email do objeto</param>
+            <returns>O objeto com respectivo email</returns>
+        </member>
+        <member name="M:senai.spmedicalgroup.webApi.Interfaces.IPacienteRepository.BuscarPorId(System.Int32)">
+            <summary>
+            Retorna o objeto com respectivo id
+            </summary>
+            <param name="id">Id do objeto</param>
+            <returns>O objeto com respectivo id</returns>
+        </member>
+        <member name="M:senai.spmedicalgroup.webApi.Interfaces.IPacienteRepository.Deletar(System.Int32)">
+            <summary>
+            Deleta o objeto com respectivo id
+            </summary>
+            <param name="id">Id do objeto</param>
+        </member>
+        <member name="M:senai.spmedicalgroup.webApi.Interfaces.IPacienteRepository.Atualizar(System.Int32,senai.spmedicalgroup.webApi.Domains.Paciente)">
+            <summary>
+            Atualiza o objeto com respectivo id
+            </summary>
+            <param name="id">Id</param>
+            <param name="objAtualizado">Objeto atualizado</param>
+        </member>
+        <member name="M:senai.spmedicalgroup.webApi.Interfaces.IPacienteRepository.Cadastrar(senai.spmedicalgroup.webApi.Domains.Paciente)">
+            <summary>
+            Cadastra um novo objeto
+            </summary>
+            <param name="objAtualizado">Novo objeto</param>
+        </member>
+        <member name="M:senai.spmedicalgroup.webApi.Interfaces.IUsuarioRepository.ListarTodos">
+            <summary>
+            Retorna todos os objetos cadastrados
+            </summary>
+            <returns>Uma lista de objetos</returns>
+        </member>
+        <member name="M:senai.spmedicalgroup.webApi.Interfaces.IUsuarioRepository.BuscarPorEmail(System.String)">
+            <summary>
+            Retorna o objeto com respectivo email
+            </summary>
+            <param name="email">Email</param>
+            <returns>O objeto com respectivo email</returns>
+        </member>
+        <member name="M:senai.spmedicalgroup.webApi.Interfaces.IUsuarioRepository.Logar(System.String,System.String)">
+            <summary>
+            Retorna o usuário se condizente
+            </summary>
+            <param name="email">Email</param>
+            <param name="senha">Senha</param>
+            <returns>Objeto usuário</returns>
+        </member>
+        <member name="M:senai.spmedicalgroup.webApi.Interfaces.IUsuarioRepository.Deletar(System.String)">
+            <summary>
+            Deleta o objeto com respectivo email
+            </summary>
+            <param name="email">Id do objeto</param>
+        </member>
+        <member name="M:senai.spmedicalgroup.webApi.Interfaces.IUsuarioRepository.Atualizar(senai.spmedicalgroup.webApi.Domains.Usuario)">
+            <summary>
+            Atualiza o objeto a partir do email
+            </summary>
+            <param name="objAtualizado">Objeto atualizado</param>
+        </member>
+        <member name="M:senai.spmedicalgroup.webApi.Interfaces.IUsuarioRepository.Cadastrar(senai.spmedicalgroup.webApi.Domains.Usuario)">
+            <summary>
+            Cadastra um novo objeto
+            </summary>
+            <param name="objAtualizado">Novo objeto</param>
+        </member>
+    </members>
+</doc>
