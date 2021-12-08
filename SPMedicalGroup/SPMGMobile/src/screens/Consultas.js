@@ -48,7 +48,7 @@ export default class Consultas extends Component {
         }
     };
 
-    componentDidMount() {
+    async componentDidMount() {
         this.buscarConsultas();
     }
 
@@ -125,7 +125,7 @@ export default class Consultas extends Component {
 
                 <Text style={styles.valor}>
                     <Text style={styles.valorCifra}>
-                        R$</Text > {item.valor}
+                        R$</Text >{item.valor}
                 </Text>
             </View>
 

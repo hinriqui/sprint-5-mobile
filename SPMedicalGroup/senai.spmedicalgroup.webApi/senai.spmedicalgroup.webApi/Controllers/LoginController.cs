@@ -48,7 +48,8 @@ namespace senai.spmedicalgroup.webApi.Controllers
                 {
                     new Claim(JwtRegisteredClaimNames.Email, usuarioBuscado.Email),
                     new Claim(ClaimTypes.Role, usuarioBuscado.TipoUsuario.ToString()),
-                    new Claim("role", usuarioBuscado.TipoUsuario.ToString())
+                    new Claim("role", usuarioBuscado.TipoUsuario.ToString()),
+                    new Claim("username", usuarioBuscado.NomeUsuario)
                 };
 
                 var key = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes("spmg-chave-autenticacao"));

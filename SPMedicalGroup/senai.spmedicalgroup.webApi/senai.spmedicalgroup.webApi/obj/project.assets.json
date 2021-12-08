@@ -7757,11 +7757,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\51917267827\\Desktop\\SPMedicalGroup\\senai.spmedicalgroup.webApi\\senai.spmedicalgroup.webApi\\senai.spmedicalgroup.webApi.csproj",
+      "projectUniqueName": "C:\\Users\\51917267827\\Desktop\\sprint-5-mobile\\SPMedicalGroup\\senai.spmedicalgroup.webApi\\senai.spmedicalgroup.webApi\\senai.spmedicalgroup.webApi.csproj",
       "projectName": "senai.spmedicalgroup.webApi",
-      "projectPath": "C:\\Users\\51917267827\\Desktop\\SPMedicalGroup\\senai.spmedicalgroup.webApi\\senai.spmedicalgroup.webApi\\senai.spmedicalgroup.webApi.csproj",
+      "projectPath": "C:\\Users\\51917267827\\Desktop\\sprint-5-mobile\\SPMedicalGroup\\senai.spmedicalgroup.webApi\\senai.spmedicalgroup.webApi\\senai.spmedicalgroup.webApi.csproj",
       "packagesPath": "C:\\Users\\51917267827\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\51917267827\\Desktop\\SPMedicalGroup\\senai.spmedicalgroup.webApi\\senai.spmedicalgroup.webApi\\obj\\",
+      "outputPath": "C:\\Users\\51917267827\\Desktop\\sprint-5-mobile\\SPMedicalGroup\\senai.spmedicalgroup.webApi\\senai.spmedicalgroup.webApi\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\51917267827\\AppData\\Roaming\\NuGet\\NuGet.Config",
