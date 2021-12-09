@@ -15,6 +15,7 @@ import {
 
 import api from '../services/api';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import jwtDecode from 'jwt-decode';
 
 import Intl from 'intl';
 import 'intl/locale-data/jsonp/pt-BR';
@@ -25,13 +26,14 @@ export default class Consultas extends Component {
         super(props);
         this.state = {
             listaConsultas: [],
+            email: ''
         };
     }
 
     buscarConsultas = async () => {
         try {
-            const token = await AsyncStorage.getItem('userToken');
-            const resposta = await api.get('/consultas', {
+            var token = await AsyncStorage.getItem('userToken')
+            var resposta = await api.get('/consultas', {
                 headers: {
                     Authorization: 'Bearer ' + token,
                 },
@@ -48,9 +50,47 @@ export default class Consultas extends Component {
         }
     };
 
-    async componentDidMount() {
-        this.buscarConsultas();
-    }
+    buscarConsultasMedico = async () => {
+        try {
+            var token = await AsyncStorage.getItem('userToken')
+            var resposta = await api.get(`/consultas/med/${this.state.email}`, {
+                headers: {
+                    Authorization: 'Bearer ' + token,
+                },
+            },
+            );
+
+
+            if (resposta.status == 200) {
+                const dadosDaApi = resposta.data;
+                this.setState({ listaConsultas: dadosDaApi });
+            }
+
+        } catch (error) {
+            console.warn(error);
+        }
+    };
+
+    buscarConsultasPaciente = async () => {
+        try {
+            var token = await AsyncStorage.getItem('userToken');
+            var resposta = await api.get(`/consultas/pac/${this.state.email}`, {
+                headers: {
+                    Authorization: 'Bearer ' + token,
+                },
+            },
+            );
+
+
+            if (resposta.status == 200) {
+                const dadosDaApi = resposta.data;
+                this.setState({ listaConsultas: dadosDaApi });
+            }
+
+        } catch (error) {
+            console.warn(error);
+        }
+    };
 
     situacaoImg(situacao) {
         switch (situacao) {
@@ -86,7 +126,28 @@ export default class Consultas extends Component {
         }
     }
 
+    async componentDidMount() {
+        var token = await AsyncStorage.getItem('userToken');
+        var resposta = jwtDecode(token);
 
+        this.setState({
+            email: resposta.email
+        });
+
+        switch (resposta.role) {
+            case 'MED':
+                this.buscarConsultasMedico();
+                break;
+
+            case 'PAC':
+                this.buscarConsultasPaciente();
+                break;
+
+            default:
+                this.buscarConsultas();
+                break;
+        }
+    }
 
     render() {
         return (
@@ -102,7 +163,7 @@ export default class Consultas extends Component {
                 <Text style={styles.titleConsultas}>Consultas</Text>
 
                 <FlatList
-                    // contentContainerStyle={styles.listaConsultas}
+                    contentContainerStyle={styles.listaConsultas}
                     data={this.state.listaConsultas}
                     keyExtractor={item => item.idConsulta}
                     renderItem={this.renderItem}
@@ -153,7 +214,7 @@ const styles = StyleSheet.create({
     titleConsultas: {
         marginTop: 28,
         marginBottom: 50,
-        fontFamily: 'Source Code Pro',
+        fontFamily: 'SourceCodePro-Bold',
         fontSize: 32,
         color: '#FFFFFF'
     },
@@ -165,6 +226,7 @@ const styles = StyleSheet.create({
     consulta: {
         flexDirection: 'row',
         justifyContent: 'space-between',
+        alignItems: 'center',
         width: 310,
         borderBottomWidth: 2,
         borderBottomColor: '#FFFFFF',
@@ -173,17 +235,19 @@ const styles = StyleSheet.create({
     },
 
     nomes: {
-        width: 200,
+        width: 180,
     },
 
     nomeMed: {
-        fontFamily: 'Source Code Pro',
+        fontFamily: 'SourceCodePro-Bold',
+        height: 25,
         fontSize: 18,
         color: '#FFFFFF'
     },
 
     nomePac: {
-        fontFamily: 'Source Code Pro',
+        fontFamily: 'SourceCodePro-Regular',
+        height: 15,
         fontSize: 11,
         color: '#FFFFFF'
     },
@@ -192,34 +256,41 @@ const styles = StyleSheet.create({
         alignItems: 'center',
     },
 
-    horario: {
-        alignItems: 'center',
-        justifyContent: 'space-between'
+    situacao: {
+        height: 25,
+        width: 25,
+        marginBottom: -2,
     },
 
     valor: {
-        fontFamily: 'Source Code Pro',
-        fontSize: 9,
+        fontFamily: 'Souliyo-Regular',
+        fontSize: 12,
         color: '#FFFFFF'
     },
-
+    
     valorCifra: {
-        fontSize: 5,
+        fontSize: 9,
     },
-
+    
     horario: {
-
+        alignItems: 'center',
+        justifyContent: 'center'
     },
+    
 
     hora: {
-        fontFamily: 'Source Code Pro',
+        fontFamily: 'SourceCodePro-Regular',
+        width: 60,
+        textAlign: 'center',
         fontSize: 18,
-        color: '#FFFFFF'
+        color: '#FFFFFF',
+        marginBottom: -5
     },
 
     data: {
-        fontFamily: 'Source Code Pro',
-        fontSize: 9,
-        color: '#FFFFFF'
+        fontFamily: 'Souliyo-Regular',
+        fontSize: 11,
+        color: '#FFFFFF',
+        marginTop: 0
     }
 });

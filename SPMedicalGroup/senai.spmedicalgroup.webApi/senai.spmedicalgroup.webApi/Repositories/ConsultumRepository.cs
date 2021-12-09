@@ -55,12 +55,12 @@ namespace senai.spmedicalgroup.webApi.Repositories
 
         public List<Consultum> ListarPorMed(int id)
         {
-            return ctx.Consulta.Where(u => u.IdMedico == id).Include(c => c.IdMedicoNavigation).Include(c => c.IdPacienteNavigation).ToList();
+            return ctx.Consulta.Where(u => u.IdMedico == id).Include(c => c.IdMedicoNavigation).Include(c => c.IdPacienteNavigation).Include(c => c.IdMedicoNavigation.IdEspecialidadeNavigation).ToList();
         }
 
         public List<Consultum> ListarPorPac(int id)
         {
-            return ctx.Consulta.Where(u => u.IdPaciente == id).Include(c => c.IdMedicoNavigation).Include(c => c.IdPacienteNavigation).ToList();
+            return ctx.Consulta.Where(u => u.IdPaciente == id).Include(c => c.IdMedicoNavigation).Include(c => c.IdPacienteNavigation).Include(c => c.IdMedicoNavigation.IdEspecialidadeNavigation).ToList();
         }
     }
 }

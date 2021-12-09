@@ -12,7 +12,6 @@ import {
     View,
 } from 'react-native';
 import jwtDecode from 'jwt-decode';
-import { parseJwt, usuarioAutenticado } from '../services/auth';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export default class Perfil extends Component {
@@ -98,19 +97,20 @@ const styles = StyleSheet.create({
 
     username: {
         color: '#FFFFFF',
-        fontFamily: 'Source Code Pro',
+        fontFamily: 'SourceCodePro-Bold',
         fontSize: 24,
+        marginBottom: -5,
     },
 
     role: {
         color: '#FFFFFF',
-        fontFamily: 'Source Code Pro',
+        fontFamily: 'SourceCodePro-Regular',
         fontSize: 18,
     },
     
     email: {
         color: '#FFFFFF',
-        fontFamily: 'Source Code Pro',
+        fontFamily: 'SourceCodePro-Bold',
         fontSize: 12,
     },
 

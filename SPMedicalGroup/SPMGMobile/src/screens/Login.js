@@ -26,20 +26,22 @@ export default class Login extends Component {
     }
 
     realizarLogin = async () => {
-        // console.warn(this.state.email + ' ' + this.state.senha);
-        const resposta = await api.post('/login', {
-            email: this.state.email,
-            senha: this.state.senha,
-        });
+        try {
+            const resposta = await api.post('/login', {
+                email: this.state.email,
+                senha: this.state.senha,
+            });
 
-        const token = resposta.data.token;
-        await AsyncStorage.setItem('userToken', token);
+            const token = resposta.data.token;
+            await AsyncStorage.setItem('userToken', token);
 
-        if (resposta.status == 200) {
-            this.props.navigation.navigate('Main');
-            console.warn('Login efetuado com sucesso!');
+            if (resposta.status == 200) {
+                this.props.navigation.navigate('Main');
+                console.warn('Login efetuado com sucesso!');
+            }
+        } catch {
+            console.warn('Usuário ou senha incorretos.')
         }
-
     };
 
     render() {
@@ -107,13 +109,13 @@ const styles = StyleSheet.create({
 
     title: {
         marginBottom: 20,
-        fontFamily: 'Source Code Pro',
+        fontFamily: 'SourceCodePro-Bold',
         fontSize: 48,
         color: '#FFFFFF',
     },
 
     inputLogin: {
-        fontFamily: 'Source Code Pro',
+        fontFamily: 'SourceCodePro-Regular',
         fontSize: 24,
         color: '#FFFFFF',
     },
@@ -130,7 +132,7 @@ const styles = StyleSheet.create({
     },
 
     btnLoginText: {
-        fontFamily: 'Source Code Pro',
+        fontFamily: 'SourceCodePro-Regular',
         fontSize: 24,
         color: '#FFFFFF',
 
